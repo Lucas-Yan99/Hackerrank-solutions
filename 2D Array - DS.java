@@ -11,14 +11,13 @@ public class Solution {
         
     }
     static int prev;
-    static int ans = 0;
+    static int ans = -99999;
     // Complete the hourglassSum function below.
     static int hourglassSum(int[][] arr) {
         for (int i = 0; i < 4; i ++){
             for ( int y = 0; y < 4; y++){
                 prev = arr[i][y] + arr[i][y+1] + arr[i][y+2] + arr[i+1][y+1] + arr[i+2][y] + arr[i+2][y+1] + arr[i+2][y+2];
                 if (prev > ans) ans = prev;
-                System.out.println("Answer is: " + ans);
             }
         }
         return ans;
